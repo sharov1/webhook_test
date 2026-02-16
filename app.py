@@ -42,7 +42,9 @@ async def receive_webhook(request: Request):
      }
 
      with LOG_FILE.open("a", encoding="utf-8") as f:
-        f.write("RECIVED AT", now(), "<-------------------")
+        f.write("RECIVED AT")
+        f.write(now())
+        f.write("<----------------------")
         f.write("\n\n")
         f.write(json.dumps(log_entry, ensure_ascii=False, indent=2))
         f.write("\n\n")
